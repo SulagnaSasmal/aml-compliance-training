@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Final Knowledge Check — Compliance Training</title>
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-brand">Compliance<span>·</span>Training</a>
+    <div class="nav-links">
+      <a href="module-bsa.html" class="nav-link">BSA</a>
+      <a href="module-ofac.html" class="nav-link">OFAC</a>
+      <a href="module-aml.html" class="nav-link">AML</a>
+      <a href="module-sar.html" class="nav-link">SAR</a>
+    </div>
+  </div>
+</nav>
+
+<div class="lesson-layout">
+  <div class="breadcrumb">
+    <a href="index.html">Training</a>
+    <span class="breadcrumb-sep">›</span>
+    <span>Final Knowledge Check</span>
+  </div>
+
+  <h1 style="font-family:var(--font-display);font-size:1.9rem;font-weight:800;color:var(--text);letter-spacing:-0.025em;margin-bottom:0.5rem;">Final Knowledge Check</h1>
+  <p style="color:var(--text-3);margin-bottom:2rem;">20 scenario-based questions covering all four modules. A score of 80% or higher is required to earn your compliance certificate.</p>
+
+  <div id="quiz-intro" style="background:var(--indigo-bg);border:1px solid var(--indigo-border);border-radius:var(--radius-lg);padding:2rem;margin-bottom:2rem;">
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-bottom:1.5rem;">
+      <div style="text-align:center;"><div style="font-family:var(--font-mono);font-size:1.5rem;font-weight:700;color:var(--indigo);">20</div><div style="font-size:0.75rem;color:var(--text-3);">Questions</div></div>
+      <div style="text-align:center;"><div style="font-family:var(--font-mono);font-size:1.5rem;font-weight:700;color:var(--indigo);">4</div><div style="font-size:0.75rem;color:var(--text-3);">Modules</div></div>
+      <div style="text-align:center;"><div style="font-family:var(--font-mono);font-size:1.5rem;font-weight:700;color:var(--indigo);">80%</div><div style="font-size:0.75rem;color:var(--text-3);">Pass Score</div></div>
+      <div style="text-align:center;"><div style="font-family:var(--font-mono);font-size:1.5rem;font-weight:700;color:var(--indigo);">∞</div><div style="font-size:0.75rem;color:var(--text-3);">Retakes</div></div>
+    </div>
+    <button id="start-quiz-btn" class="btn btn-indigo" style="width:100%;">Begin Knowledge Check →</button>
+  </div>
+
+  <div id="quiz-container" style="display:none;">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1.5rem;">
+      <div style="font-family:var(--font-mono);font-size:0.8rem;color:var(--text-3);">Question <span id="q-current">1</span> of 20</div>
+      <div style="width:200px;height:6px;background:var(--border);border-radius:99px;overflow:hidden;">
+        <div id="q-progress-bar" style="height:100%;background:var(--indigo);border-radius:99px;transition:width 0.3s;width:5%;"></div>
+      </div>
+    </div>
+
+    <div id="question-area"></div>
+
+    <div style="display:flex;gap:1rem;margin-top:1.5rem;">
+      <button id="next-btn" class="btn btn-indigo" style="display:none;" onclick="nextQuestion()">Next Question →</button>
+      <button id="submit-btn" class="btn btn-indigo" style="display:none;" onclick="submitQuiz()">Submit & See Results</button>
+    </div>
+  </div>
+
+  <div id="results-panel" style="display:none;">
+    <div id="score-banner" style="border-radius:var(--radius-lg);padding:2rem;text-align:center;margin-bottom:2rem;">
+      <div style="font-family:var(--font-display);font-size:3rem;font-weight:800;" id="score-number"></div>
+      <div style="font-size:1rem;margin-top:0.25rem;" id="score-label"></div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-bottom:2rem;" id="module-scores"></div>
+
+    <div id="review-section"></div>
+
+    <div style="display:flex;gap:1rem;margin-top:2rem;flex-wrap:wrap;">
+      <button onclick="retakeQuiz()" class="btn btn-indigo">Retake Quiz</button>
+      <a href="index.html" class="btn" style="background:var(--surface);border:1px solid var(--border);color:var(--text-2);">← Return to Training</a>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="footer-grid">
+    <div><div class="footer-brand">Compliance<span>·</span>Training</div></div>
+    <div>
+      <div class="footer-col-title">Modules</div>
+      <ul class="footer-links">
+        <li><a href="module-bsa.html">Module 1: BSA</a></li>
+        <li><a href="module-ofac.html">Module 2: OFAC</a></li>
+        <li><a href="module-aml.html">Module 3: AML</a></li>
+        <li><a href="module-sar.html">Module 4: SAR</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Program</div>
+      <ul class="footer-links">
+        <li><a href="knowledge-check.html">Knowledge Check</a></li>
+        <li><a href="index.html">← Program Home</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom"><span class="footer-copyright">© 2025 Compliance Training — Portfolio project by Sulagna Sasmal</span></div>
+</footer>
+
+<script src="assets/js/training.js"></script>
+<script>
+const questions = [
+  // BSA Questions (1-5)
+  {
+    module: "BSA",
+    q: "A customer deposits $9,000 on Monday, $9,500 on Tuesday, and $8,000 on Wednesday, all at the same branch. The teller recognizes the customer across all three transactions. What is the required BSA response?",
+    options: [
+      "No action required — no single transaction exceeded $10,000",
+      "File a CTR for each transaction separately",
+      "Aggregate the transactions and file a single CTR because the total exceeds $10,000 and there is reason to believe they are connected",
+      "File a SAR only — CTRs are not required because no single transaction exceeded the threshold"
+    ],
+    answer: 2,
+    explanation: "BSA requires aggregation when transactions appear to be connected and the aggregate total exceeds $10,000 within a business day or across multiple days if there is reason to believe the transactions are related."
+  },
+  {
+    module: "BSA",
+    q: "Under FinCEN's Customer Due Diligence (CDD) rule, what is the ownership threshold that triggers beneficial ownership collection for a legal entity customer?",
+    options: [
+      "Any ownership interest, regardless of percentage",
+      "10% or greater ownership",
+      "25% or greater ownership",
+      "51% or greater ownership (majority control)"
+    ],
+    answer: 2,
+    explanation: "FinCEN's CDD rule requires identifying all natural persons who own 25% or more of a legal entity customer, plus one person with significant managerial control."
+  },
+  {
+    module: "BSA",
+    q: "A long-standing business customer of a bank receives foreign wire transfers from multiple undisclosed counterparties every week and immediately moves the funds offshore. The activity does not match the customer's stated trade business profile. What is the BSA-mandated action?",
+    options: [
+      "Close the account immediately",
+      "Conduct Enhanced Due Diligence (EDD) and file a SAR if no satisfactory explanation is obtained",
+      "Call FinCEN and ask for guidance before taking any action",
+      "Notify the customer and ask them to explain the wire activity"
+    ],
+    answer: 1,
+    explanation: "When activity is inconsistent with the customer's risk profile, the institution should conduct EDD. If the inconsistency cannot be resolved, a SAR must be filed. Notifying the customer would constitute tipping off, which is prohibited."
+  },
+  {
+    module: "BSA",
+    q: "Currency Transaction Reports (CTRs) must be filed within how many days of the transaction?",
+    options: [
+      "5 calendar days",
+      "10 business days",
+      "15 calendar days",
+      "30 calendar days"
+    ],
+    answer: 2,
+    explanation: "CTRs must be filed within 15 calendar days of the transaction date. SARs, by contrast, have a 30-day window (or 60 days when no suspect is identified)."
+  },
+  {
+    module: "BSA",
+    q: "Which of the following individuals is a 'control prong' subject under FinCEN's beneficial ownership rule?",
+    options: [
+      "Any employee of the legal entity customer",
+      "Any natural person with 10% ownership",
+      "A person with significant responsibility to control, manage, or direct the legal entity (e.g., CEO, COO, CFO)",
+      "The institution's compliance officer who opened the account"
+    ],
+    answer: 2,
+    explanation: "The 'control prong' identifies one individual with significant managerial control — typically a CEO, COO, CFO, managing member, or equivalent — regardless of their ownership stake."
+  },
+  // OFAC Questions (6-10)
+  {
+    module: "OFAC",
+    q: "A company receives a payment from a vendor whose name is spelled slightly differently than an SDN list entry (e.g., 'Ahmad' vs. 'Ahmed'). Under OFAC's screening standards, what is the appropriate response?",
+    options: [
+      "Proceed with the transaction — OFAC only blocks exact name matches",
+      "Treat this as a potential match and escalate for manual review before processing",
+      "Reject the payment immediately and notify the vendor",
+      "File a SAR with FinCEN and await instructions"
+    ],
+    answer: 1,
+    explanation: "Alternate spellings and transliteration variations are a recognized matching challenge. Screening programs should flag potential matches for manual review. Processing without review when a potential match exists exposes the institution to OFAC liability."
+  },
+  {
+    module: "OFAC",
+    q: "Company X is not on the SDN list. However, SDN-listed Party A owns 26% of Company X, and SDN-listed Party B owns 30% of Company X. Under OFAC's 50% rule, which statement is correct?",
+    options: [
+      "Company X is not blocked because neither A nor B individually owns 50%",
+      "Company X is blocked because the aggregate ownership of SDN parties exceeds 50%",
+      "Company X is a potential match only — transactions require enhanced scrutiny but are not blocked",
+      "Only the 26% stake from Party A is relevant — the 50% rule does not apply to combined ownership"
+    ],
+    answer: 1,
+    explanation: "OFAC's 50% rule aggregates the ownership interests of all SDN-listed parties. If SDN parties collectively own 50% or more, the entity is treated as blocked even if no individual SDN party owns 50%."
+  },
+  {
+    module: "OFAC",
+    q: "A bank receives a wire transfer that must be rejected under OFAC regulations (not blocked — rejected, because processing would violate a non-SDN prohibition). What is the required reporting timeline?",
+    options: [
+      "File a report with OFAC within 10 business days of the transaction date",
+      "File a CTR within 15 days and notify FinCEN",
+      "File a blocking report within 10 business days and an annual report if the funds remain blocked",
+      "No OFAC report is required for rejected transactions"
+    ],
+    answer: 0,
+    explanation: "Rejected transactions (where no funds are held) must be reported to OFAC within 10 business days. Blocked transactions require reporting within 10 business days plus annual reports as long as funds remain blocked."
+  },
+  {
+    module: "OFAC",
+    q: "An institution's customer conducts a transaction that appears to involve a Cuban national. Cuba sanctions were largely wound down following OFAC regulatory changes. What is the correct approach?",
+    options: [
+      "Block the transaction automatically — Cuba remains a fully sanctioned jurisdiction",
+      "Review current OFAC regulations because Cuba's sanction status has changed, and apply the current applicable restrictions",
+      "File a SAR because Cuba involvement is always suspicious",
+      "Exempt the transaction — OFAC only applies to SDN-listed individuals, not countries"
+    ],
+    answer: 1,
+    explanation: "OFAC sanction programs change. Compliance teams must stay current with active program lists. Cuba's sanctions have been modified over time. Always reference the current OFAC program list rather than relying on historical assumptions."
+  },
+  {
+    module: "OFAC",
+    q: "A customer claims that a transaction flagged in OFAC screening is a false positive and provides documentation. Who has final authority to clear the transaction?",
+    options: [
+      "The front-line employee who flagged it, once documentation is reviewed",
+      "The customer, because they provided documentation",
+      "A designated OFAC compliance officer or senior compliance personnel following a documented review process",
+      "FinCEN, after the institution submits a query"
+    ],
+    answer: 2,
+    explanation: "Only authorized compliance personnel — not front-line employees — can clear potential OFAC matches. The decision must be documented in the institution's records."
+  },
+  // AML Questions (11-15)
+  {
+    module: "AML",
+    q: "An AML transaction monitoring alert flags a personal account that has received 15 cash deposits below $9,000 over 30 days, each from a different branch location. What typology does this most likely represent?",
+    options: [
+      "Trade-Based Money Laundering (TBML)",
+      "Structuring / Smurfing",
+      "Shell company layering",
+      "Funnel account scheme"
+    ],
+    answer: 1,
+    explanation: "Structuring (smurfing) involves deliberately breaking up transactions to stay below reporting thresholds. Multiple transactions just below $10,000 conducted at different locations across a short period is a classic structuring pattern."
+  },
+  {
+    module: "AML",
+    q: "What are the three stages of money laundering in the correct order?",
+    options: [
+      "Structuring → Layering → Integration",
+      "Placement → Structuring → Extraction",
+      "Placement → Layering → Integration",
+      "Integration → Layering → Placement"
+    ],
+    answer: 2,
+    explanation: "The three stages are: Placement (introducing illegal funds into the financial system), Layering (obscuring the trail through complex transactions), and Integration (reintroducing the funds as apparently legitimate assets)."
+  },
+  {
+    module: "AML",
+    q: "A compliance analyst receives a Level 2 AML alert for a new business account. The account received $200,000 in ACH credits from unrelated companies and wired equivalent amounts to a single offshore account within 24 hours. Which investigation action is highest priority?",
+    options: [
+      "Contact the customer to ask about the transactions",
+      "Close the account immediately without further review",
+      "Review account opening documents, compare activity to customer risk profile, and assess for SAR filing",
+      "Refer to senior management and wait for guidance before taking any action"
+    ],
+    answer: 2,
+    explanation: "The analyst must review available documentation, compare the activity to the customer's stated purpose (which this activity clearly contradicts), and make a SAR recommendation. Contacting the customer before filing would constitute tipping off."
+  },
+  {
+    module: "AML",
+    q: "Which of the following is NOT one of the five required pillars of an AML compliance program under 31 CFR 1020.210?",
+    options: [
+      "Designation of a compliance officer",
+      "Employee training program",
+      "Independent audit / testing function",
+      "Real-time transaction blocking technology"
+    ],
+    answer: 3,
+    explanation: "The five BSA/AML program pillars are: (1) Written internal policies, (2) Designated compliance officer, (3) Employee training, (4) Independent testing, and (5) Customer Due Diligence (CDD). Real-time blocking technology is not a statutory requirement."
+  },
+  {
+    module: "AML",
+    q: "An invoice reviewed as part of a Trade-Based Money Laundering (TBML) investigation shows 100 units of industrial equipment priced at $500 per unit. Market value for the same equipment is approximately $5,000 per unit. What does this indicate?",
+    options: [
+      "The supplier likely made a data entry error",
+      "Under-invoicing — a TBML technique to transfer value across borders",
+      "Over-invoicing — a TBML technique to transfer value across borders",
+      "Normal trade price variation — no action required"
+    ],
+    answer: 1,
+    explanation: "Under-invoicing ($500 vs. $5,000 market value) is a TBML technique where the importer transfers value to the exporter. The exporter receives goods worth far more than what was invoiced, effectively transferring the value difference across borders illicitly."
+  },
+  // SAR Questions (16-20)
+  {
+    module: "SAR",
+    q: "A bank identifies suspicious activity on June 1 involving a known suspect. When is the SAR filing deadline?",
+    options: [
+      "July 1 (30 calendar days from June 1)",
+      "July 31 (60 calendar days from June 1)",
+      "June 15 (15 calendar days from June 1)",
+      "August 30 (90 calendar days from June 1)"
+    ],
+    answer: 0,
+    explanation: "When a suspect can be identified, the SAR must be filed within 30 calendar days of the date the institution initially detects a basis for filing. The 60-day extension applies only when no suspect has been identified."
+  },
+  {
+    module: "SAR",
+    q: "A compliance officer tells a customer: 'I can't discuss it, but I'd suggest moving your account elsewhere.' What BSA violation has occurred?",
+    options: [
+      "Failure to file a CTR",
+      "Structuring",
+      "Tipping off — disclosing that a SAR has been or may be filed",
+      "No violation — the officer did not disclose what type of report was filed"
+    ],
+    answer: 2,
+    explanation: "The tipping-off prohibition (31 U.S.C. § 5318(g)(2)) prohibits disclosing to any person that a SAR has been or may be filed, or disclosing the contents of a SAR. Even indirect references — like suggesting a customer close their account — can constitute tipping off."
+  },
+  {
+    module: "SAR",
+    q: "Which of the following is the BEST example of a SAR narrative sentence?",
+    options: [
+      "Subject appears to be engaged in money laundering based on suspicious account activity.",
+      "Between 01/01/2025 and 03/01/2025, Subject received 8 ACH credits totaling $47,200 from 5 unrelated originators and wired equivalent amounts within 48 hours to a single account at [BANK] in [JURISDICTION].",
+      "Customer behavior is highly suspicious and inconsistent with their account profile.",
+      "This is likely a case of structuring — activity does not make business sense."
+    ],
+    answer: 1,
+    explanation: "SAR narratives must be specific, factual, and data-driven. They should answer the 5 Ws (Who, What, When, Where, Why). Conclusory language ('appears to be money laundering,' 'highly suspicious') is discouraged — let the facts speak for themselves."
+  },
+  {
+    module: "SAR",
+    q: "After an institution files a SAR, the suspicious activity continues. What action is required?",
+    options: [
+      "No action — the original SAR covers all future activity",
+      "File a continuing activity SAR every 90 days while the activity continues, referencing the original BSA ID",
+      "File a new SAR every 30 days until the activity stops",
+      "Notify law enforcement directly — additional SARs are not required"
+    ],
+    answer: 1,
+    explanation: "If suspicious activity continues after an initial SAR is filed, a continuing activity SAR must be filed every 90 days while the activity persists. The continuation SAR must reference the original SAR's BSA Identification Number to link the cases."
+  },
+  {
+    module: "SAR",
+    q: "Which FinCEN system is used to file Suspicious Activity Reports?",
+    options: [
+      "FinCEN314 Portal",
+      "OFAC SDN Filing System",
+      "BSA E-Filing System at bsaefiling.fincen.treas.gov",
+      "FFIEC Online Reporting System"
+    ],
+    answer: 2,
+    explanation: "SARs and CTRs are filed electronically through FinCEN's BSA E-Filing System at bsaefiling.fincen.treas.gov. Access requires an EIN-registered account configured by the institution's primary Supervisory User."
+  }
+];
+
+let currentQ = 0;
+let answers = new Array(questions.length).fill(null);
+
+function startQuiz() {
+  document.getElementById("quiz-intro").style.display = "none";
+  document.getElementById("quiz-container").style.display = "block";
+  renderQuestion();
+}
+
+document.getElementById("start-quiz-btn").addEventListener("click", startQuiz);
+
+function renderQuestion() {
+  const q = questions[currentQ];
+  const area = document.getElementById("question-area");
+  const moduleColors = { BSA: "#4c6ef5", OFAC: "#d97706", AML: "#0d9488", SAR: "#7c3aed" };
+  const color = moduleColors[q.module] || "#4c6ef5";
+
+  area.innerHTML = `
+    <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:1rem;">
+      <span style="background:${color}1a;color:${color};border:1px solid ${color}33;border-radius:99px;padding:0.2rem 0.75rem;font-family:var(--font-mono);font-size:0.72rem;font-weight:600;">${q.module}</span>
+      <span style="font-size:0.75rem;color:var(--text-3);">Question ${currentQ + 1} of ${questions.length}</span>
+    </div>
+    <p style="font-size:1rem;font-weight:600;color:var(--text);line-height:1.6;margin-bottom:1.25rem;">${q.q}</p>
+    <div class="quiz-options">
+      ${q.options.map((opt, i) => `
+        <div class="quiz-option" data-idx="${i}" onclick="selectAnswer(${i})"
+          style="${answers[currentQ] === i ? 'border-color:var(--indigo);background:var(--indigo-bg);' : ''}">
+          <span class="quiz-option-letter">${String.fromCharCode(65+i)}</span>
+          <span>${opt}</span>
+        </div>
+      `).join("")}
+    </div>
+    <div id="explanation-box" style="display:none;background:var(--surface-2);border:1px solid var(--border);border-radius:var(--radius);padding:1rem;margin-top:1rem;font-size:0.875rem;color:var(--text-2);line-height:1.6;"></div>
+  `;
+
+  document.getElementById("q-current").textContent = currentQ + 1;
+  document.getElementById("q-progress-bar").style.width = `${((currentQ + 1) / questions.length) * 100}%`;
+  document.getElementById("next-btn").style.display = "none";
+  document.getElementById("submit-btn").style.display = "none";
+}
+
+function selectAnswer(idx) {
+  if (answers[currentQ] !== null) return;
+  answers[currentQ] = idx;
+
+  const opts = document.querySelectorAll(".quiz-option");
+  opts.forEach((o, i) => {
+    if (i === questions[currentQ].answer) {
+      o.style.borderColor = "#0d9488";
+      o.style.background = "#f0fdf4";
+    } else if (i === idx && idx !== questions[currentQ].answer) {
+      o.style.borderColor = "#ef4444";
+      o.style.background = "#fef2f2";
+    }
+    o.style.cursor = "default";
+    o.onclick = null;
+  });
+
+  const expBox = document.getElementById("explanation-box");
+  expBox.style.display = "block";
+  expBox.innerHTML = `<strong>${idx === questions[currentQ].answer ? "✓ Correct." : "✗ Incorrect."}</strong> ${questions[currentQ].explanation}`;
+  expBox.style.borderColor = idx === questions[currentQ].answer ? "#0d9488" : "#ef4444";
+
+  if (currentQ < questions.length - 1) {
+    document.getElementById("next-btn").style.display = "inline-block";
+  } else {
+    document.getElementById("submit-btn").style.display = "inline-block";
+  }
+}
+
+function nextQuestion() {
+  currentQ++;
+  renderQuestion();
+}
+
+function submitQuiz() {
+  document.getElementById("quiz-container").style.display = "none";
+  document.getElementById("results-panel").style.display = "block";
+
+  const correct = answers.filter((a, i) => a === questions[i].answer).length;
+  const pct = Math.round((correct / questions.length) * 100);
+  const passed = pct >= 80;
+
+  const banner = document.getElementById("score-banner");
+  banner.style.background = passed ? "#f0fdf4" : "#fef2f2";
+  banner.style.border = `1px solid ${passed ? "#0d9488" : "#ef4444"}`;
+  document.getElementById("score-number").style.color = passed ? "#0d9488" : "#ef4444";
+  document.getElementById("score-number").textContent = `${pct}%`;
+  document.getElementById("score-label").textContent = passed
+    ? `${correct} / ${questions.length} correct — You passed! Certification earned.`
+    : `${correct} / ${questions.length} correct — Score of 80% required. Please review and retake.`;
+
+  const modules = ["BSA","OFAC","AML","SAR"];
+  const modColors = { BSA:"#4c6ef5", OFAC:"#d97706", AML:"#0d9488", SAR:"#7c3aed" };
+  let modScoresHtml = modules.map(m => {
+    const mQs = questions.filter(q => q.module === m);
+    const mCorrect = mQs.filter((q, i) => {
+      const globalIdx = questions.indexOf(q);
+      return answers[globalIdx] === q.answer;
+    }).length;
+    const mPct = Math.round((mCorrect / mQs.length) * 100);
+    return `<div style="background:var(--surface-2);border:1px solid var(--border);border-radius:var(--radius);padding:1rem;text-align:center;">
+      <div style="font-family:var(--font-mono);font-size:1.25rem;font-weight:700;color:${modColors[m]};">${mPct}%</div>
+      <div style="font-size:0.75rem;color:var(--text-3);margin-top:0.25rem;">${m}</div>
+      <div style="font-size:0.72rem;color:var(--text-3);">${mCorrect}/${mQs.length}</div>
+    </div>`;
+  }).join("");
+  document.getElementById("module-scores").innerHTML = modScoresHtml;
+
+  const review = questions.map((q, i) => {
+    const isCorrect = answers[i] === q.answer;
+    return `<div style="border:1px solid ${isCorrect?"#0d9488":"#ef4444"};border-radius:var(--radius);padding:1rem;margin-bottom:0.75rem;">
+      <div style="display:flex;gap:0.5rem;align-items:flex-start;margin-bottom:0.5rem;">
+        <span style="color:${isCorrect?"#0d9488":"#ef4444"};font-weight:700;">${isCorrect?"✓":"✗"}</span>
+        <span style="font-weight:600;font-size:0.875rem;">${q.q}</span>
+      </div>
+      ${!isCorrect ? `<div style="font-size:0.8rem;color:#ef4444;margin-bottom:0.25rem;">Your answer: ${answers[i] !== null ? q.options[answers[i]] : "Not answered"}</div>` : ""}
+      <div style="font-size:0.8rem;color:#0d9488;margin-bottom:0.5rem;">Correct: ${q.options[q.answer]}</div>
+      <div style="font-size:0.8rem;color:var(--text-3);">${q.explanation}</div>
+    </div>`;
+  }).join("");
+  document.getElementById("review-section").innerHTML = `<h3 style="font-weight:700;margin-bottom:1rem;">Review All Questions</h3>${review}`;
+
+  if (passed) {
+    localStorage.setItem("compliance_certification", JSON.stringify({ score: pct, date: new Date().toISOString() }));
+  }
+}
+
+function retakeQuiz() {
+  currentQ = 0;
+  answers = new Array(questions.length).fill(null);
+  document.getElementById("results-panel").style.display = "none";
+  document.getElementById("quiz-container").style.display = "block";
+  renderQuestion();
+}
+</script>
+</body>
+</html>

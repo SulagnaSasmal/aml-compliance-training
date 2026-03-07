@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Module 2: OFAC Screening — Compliance Training</title>
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-brand">Compliance<span>·</span>Training</a>
+    <div class="nav-links">
+      <a href="module-bsa.html" class="nav-link">BSA</a>
+      <a href="module-ofac.html" class="nav-link active">OFAC</a>
+      <a href="module-aml.html" class="nav-link">AML</a>
+      <a href="module-sar.html" class="nav-link">SAR</a>
+    </div>
+  </div>
+</nav>
+
+<div class="lesson-layout">
+  <div class="breadcrumb">
+    <a href="index.html">Training</a>
+    <span class="breadcrumb-sep">›</span>
+    <span>Module 2: OFAC Screening</span>
+  </div>
+  <div style="display:flex;gap:0.5rem;margin-bottom:1rem;flex-wrap:wrap;">
+    <span class="badge badge-indigo">Module 2</span>
+    <span class="badge badge-red">REQUIRED ALL ROLES</span>
+    <span class="badge badge-gray">3 Lessons · ~60 min</span>
+  </div>
+
+  <h1 style="font-family:var(--font-display);font-size:1.9rem;font-weight:800;color:var(--text);letter-spacing:-0.025em;margin-bottom:0.75rem;">OFAC Screening &amp; Sanctions Compliance</h1>
+  <p style="color:var(--text-3);margin-bottom:2.5rem;">Understanding U.S. Treasury sanctions programs, the SDN List, and your obligations when a potential match is identified.</p>
+
+  <article class="lesson-article">
+
+    <h2>Lesson 2.1 — What Is OFAC?</h2>
+
+    <p>The <strong>Office of Foreign Assets Control (OFAC)</strong> is a financial intelligence and enforcement agency of the U.S. Treasury Department. OFAC administers and enforces economic and trade sanctions based on U.S. foreign policy and national security goals against:</p>
+    <ul>
+      <li>Targeted foreign countries and regimes (e.g., Iran, North Korea, Cuba, Russia)</li>
+      <li>Terrorists and terrorist organizations</li>
+      <li>International narcotics traffickers</li>
+      <li>Proliferators of weapons of mass destruction</li>
+      <li>Other threats to U.S. national security, foreign policy, or economy</li>
+    </ul>
+
+    <p>OFAC sanctions are <em>strict liability</em> — intent is irrelevant. Processing a transaction with a sanctioned party violates OFAC regulations regardless of whether you knew the party was sanctioned. Civil penalties can reach <strong>$356,579 per violation</strong> (2025 FCPA/OFAC penalty maximums), and criminal penalties can include imprisonment.</p>
+
+    <h3>The SDN List — Specially Designated Nationals</h3>
+    <p>The <strong>Specially Designated Nationals and Blocked Persons List (SDN List)</strong> is OFAC's primary sanctions list. It contains the names of individuals, entities, vessels, and aircraft whose assets must be blocked and with whom U.S. persons are generally prohibited from doing business.</p>
+
+    <p>The SDN List is updated frequently — sometimes multiple times per day. Financial institutions must screen against the current version, not a cached or delayed version.</p>
+
+    <div class="callout callout-rule">
+      <div class="callout-title">50% Ownership Rule</div>
+      <p>An entity that is <strong>50% or more directly or indirectly owned</strong> by a sanctioned party is itself considered sanctioned — even if it is not explicitly named on any OFAC list. This means beneficial ownership screening must look through entity layers to identify potential 50% rule triggers.</p>
+    </div>
+
+    <h2>Lesson 2.2 — Screening Methodology</h2>
+
+    <p>OFAC screening is required at:</p>
+    <ul>
+      <li><strong>Account opening</strong> — Screen all new customers against OFAC lists before account activation</li>
+      <li><strong>Transaction processing</strong> — Screen all parties to a transaction (originator, beneficiary, intermediary) before processing</li>
+      <li><strong>Periodic re-screening</strong> — Screen existing customers when OFAC updates its lists</li>
+      <li><strong>Any name change or update</strong> — Re-screen when customer name or address information changes</li>
+    </ul>
+
+    <h3>Match Types</h3>
+    <table style="width:100%;border-collapse:collapse;font-size:0.85rem;margin:1rem 0;">
+      <thead><tr style="background:var(--bg-tag);"><th style="padding:8px 12px;text-align:left;">Match Type</th><th style="padding:8px 12px;text-align:left;">Definition</th><th style="padding:8px 12px;text-align:left;">Required Action</th></tr></thead>
+      <tbody>
+        <tr style="border-bottom:1px solid var(--border);"><td style="padding:8px 12px;"><strong>True Match</strong></td><td style="padding:8px 12px;color:var(--text-2);">Name, DOB, ID, and other identifiers conclusively match SDN List entry</td><td style="padding:8px 12px;color:var(--red);font-weight:600;">BLOCK immediately. Contact compliance. File blocked property report with OFAC.</td></tr>
+        <tr style="border-bottom:1px solid var(--border);"><td style="padding:8px 12px;"><strong>False Positive</strong></td><td style="padding:8px 12px;color:var(--text-2);">Name similarity only; other identifiers clearly do not match</td><td style="padding:8px 12px;color:var(--teal);">Clear with documentation. Proceed with transaction.</td></tr>
+        <tr><td style="padding:8px 12px;"><strong>Potential Match</strong></td><td style="padding:8px 12px;color:var(--text-2);">Insufficient information to definitively confirm or rule out — common with name transliterations, aliases</td><td style="padding:8px 12px;color:var(--amber);">Hold transaction. Escalate to compliance for enhanced review.</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Lesson 2.3 — Blocked Transaction Procedures</h2>
+
+    <p>When a <strong>true match</strong> is identified, the following steps must be taken within <strong>10 business days</strong>:</p>
+    <ol>
+      <li>Block the transaction immediately — do not process, return, or release</li>
+      <li>Notify the compliance department and designated OFAC officer</li>
+      <li>Segregate blocked funds in a separate interest-bearing account if they represent a property interest</li>
+      <li>File an <strong>Annual Report of Blocked Property</strong> with OFAC by September 30 of the following year if property remains blocked</li>
+      <li>For blocked wire transfers, report rejected (not blocked) transactions within 10 business days using OFAC's transaction reporting system</li>
+    </ol>
+
+    <div class="callout callout-note">
+      <div class="callout-title">Blocked vs. Rejected Transactions</div>
+      <p><strong>Blocking</strong> means retaining custody of funds that represent an asset of a sanctioned party (e.g., an account balance). <strong>Rejecting</strong> means not processing a transaction (e.g., a wire transfer) without any retention of the funds — the transaction is simply declined. Both require reporting to OFAC; the timelines and forms differ.</p>
+    </div>
+
+    <div style="background:var(--teal-bg);border:1px solid var(--teal-border);border-radius:var(--radius-lg);padding:1.5rem;margin:2rem 0;text-align:center;">
+      <p style="font-size:0.875rem;margin-bottom:1rem;"><strong>Module 2 complete.</strong> Continue to AML Transaction Monitoring.</p>
+      <a href="module-aml.html" class="btn btn-indigo">Continue to Module 3: AML →</a>
+    </div>
+
+  </article>
+</div>
+
+<footer class="footer">
+  <div class="footer-grid">
+    <div><div class="footer-brand">Compliance<span>·</span>Training</div></div>
+    <div>
+      <div class="footer-col-title">Next</div>
+      <ul class="footer-links">
+        <li><a href="module-aml.html">Module 3: AML →</a></li>
+        <li><a href="module-sar.html">Module 4: SAR →</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Program</div>
+      <ul class="footer-links">
+        <li><a href="index.html">← Program Home</a></li>
+        <li><a href="module-bsa.html">← Module 1: BSA</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom"><span class="footer-copyright">© 2025 Compliance Training — Portfolio project by Sulagna Sasmal</span></div>
+</footer>
+
+<script src="assets/js/training.js"></script>
+</body>
+</html>

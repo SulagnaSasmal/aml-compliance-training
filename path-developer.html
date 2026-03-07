@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Developer Path — Compliance Training</title>
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-brand">Compliance<span>·</span>Training</a>
+    <div class="nav-links">
+      <a href="module-bsa.html" class="nav-link">BSA</a>
+      <a href="module-ofac.html" class="nav-link">OFAC</a>
+      <a href="module-aml.html" class="nav-link">AML</a>
+      <a href="module-sar.html" class="nav-link">SAR</a>
+    </div>
+  </div>
+</nav>
+
+<div class="lesson-layout">
+  <div class="breadcrumb">
+    <a href="index.html">Training</a>
+    <span class="breadcrumb-sep">›</span>
+    <span>Developer Path</span>
+  </div>
+
+  <div style="display:flex;gap:0.5rem;margin-bottom:1rem;flex-wrap:wrap;">
+    <span class="badge badge-purple">Developer</span>
+    <span class="badge badge-red">2 Required · 2 Optional</span>
+    <span class="badge badge-gray">~2 hours total</span>
+  </div>
+
+  <h1 style="font-family:var(--font-display);font-size:1.9rem;font-weight:800;color:var(--text);letter-spacing:-0.025em;margin-bottom:0.5rem;">Developer Learning Path</h1>
+  <p style="color:var(--text-3);margin-bottom:2.5rem;">Developers building financial systems must understand the compliance requirements that govern the systems they build. This path focuses on what BSA and OFAC mean for system design — data retention, screening integration, CTR triggers, and SAR-safe logging.</p>
+
+  <div style="background:var(--surface-2);border:1px solid var(--border);border-radius:var(--radius);padding:1rem;margin-bottom:2rem;font-family:var(--font-mono);font-size:0.8rem;line-height:1.8;color:var(--text-2);">
+    <span style="color:var(--indigo);">// Why developers need compliance training</span><br>
+    <span style="color:var(--text-3);">const</span> reasons = [<br>
+    &nbsp;&nbsp;<span style="color:#22c55e;">"Application logs may capture SAR-related data — understand retention requirements"</span>,<br>
+    &nbsp;&nbsp;<span style="color:#22c55e;">"OFAC screening must be integrated at account creation and before each transaction"</span>,<br>
+    &nbsp;&nbsp;<span style="color:#22c55e;">"CTR threshold logic must aggregate across accounts and business days"</span>,<br>
+    &nbsp;&nbsp;<span style="color:#22c55e;">"Beneficial ownership data must be collected and stored per FinCEN CDD requirements"</span>,<br>
+    &nbsp;&nbsp;<span style="color:#22c55e;">"Tipping off via email/notification bugs is a legal liability"</span><br>
+    ];
+  </div>
+
+  <div style="display:grid;grid-template-columns:1fr 2fr;gap:2rem;align-items:start;">
+    <div style="background:var(--surface-2);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.5rem;position:sticky;top:80px;">
+      <div style="font-weight:700;font-size:0.875rem;margin-bottom:1rem;">System Design Checklist</div>
+      <ul style="font-size:0.8rem;color:var(--text-2);line-height:2;padding-left:1.25rem;">
+        <li>OFAC screening at account creation</li>
+        <li>OFAC screening before each outbound wire</li>
+        <li>CTR aggregation by customer, same-day</li>
+        <li>5-year record retention for all transactions</li>
+        <li>Beneficial ownership fields in customer schema</li>
+        <li>SAR BSA ID stored in incident management system</li>
+        <li>No SAR status exposed in customer-facing UI or emails</li>
+      </ul>
+    </div>
+
+    <div>
+      <div class="path-step" style="border-left:2px solid #7c3aed;padding-left:2rem;padding-bottom:2rem;position:relative;">
+        <div style="position:absolute;left:-1rem;top:0;width:2rem;height:2rem;border-radius:50%;background:#7c3aed;color:white;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.8rem;">1</div>
+        <div style="margin-bottom:0.25rem;"><span class="badge badge-red" style="font-size:0.68rem;">REQUIRED</span></div>
+        <div style="font-weight:700;font-size:1rem;margin-bottom:0.25rem;">Module 1: Bank Secrecy Act (BSA)</div>
+        <div style="font-size:0.875rem;color:var(--text-3);margin-bottom:0.25rem;"><strong>Developer focus areas:</strong></div>
+        <ul style="font-size:0.8rem;color:var(--text-2);margin:0.5rem 0 0.75rem;padding-left:1.25rem;line-height:1.8;">
+          <li>Lesson 1.2 — CDD: what fields you must collect and store at account opening</li>
+          <li>Lesson 1.3 — CTR aggregation logic: same business-day, same customer scope</li>
+          <li>Lesson 1.4 — Record retention: 5-year minimum for all BSA-covered records</li>
+        </ul>
+        <a href="module-bsa.html" class="btn btn-sm" style="background:#f5f3ff;border:1px solid #c4b5fd;color:#7c3aed;">Start Module →</a>
+      </div>
+
+      <div class="path-step" style="border-left:2px solid #7c3aed;padding-left:2rem;padding-bottom:2rem;position:relative;">
+        <div style="position:absolute;left:-1rem;top:0;width:2rem;height:2rem;border-radius:50%;background:#7c3aed;color:white;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.8rem;">2</div>
+        <div style="margin-bottom:0.25rem;"><span class="badge badge-red" style="font-size:0.68rem;">REQUIRED</span></div>
+        <div style="font-weight:700;font-size:1rem;margin-bottom:0.25rem;">Module 2: OFAC Screening</div>
+        <div style="font-size:0.875rem;color:var(--text-3);margin-bottom:0.25rem;"><strong>Developer focus areas:</strong></div>
+        <ul style="font-size:0.8rem;color:var(--text-2);margin:0.5rem 0 0.75rem;padding-left:1.25rem;line-height:1.8;">
+          <li>Lesson 2.1 — 50% rule: implications for how you query and store ownership data</li>
+          <li>Lesson 2.2 — When to call the screening API: at onboarding, before wire sends, and on SDN list updates</li>
+          <li>Lesson 2.3 — System behavior for blocked transactions: hold funds, do not return error to customer</li>
+        </ul>
+        <a href="module-ofac.html" class="btn btn-sm" style="background:#f5f3ff;border:1px solid #c4b5fd;color:#7c3aed;">Start Module →</a>
+      </div>
+
+      <div class="path-step" style="border-left:2px dashed var(--border);padding-left:2rem;padding-bottom:2rem;position:relative;">
+        <div style="position:absolute;left:-1rem;top:0;width:2rem;height:2rem;border-radius:50%;background:var(--surface-2);border:2px solid var(--border);color:var(--text-3);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.8rem;">3</div>
+        <div style="margin-bottom:0.25rem;"><span class="badge badge-gray" style="font-size:0.68rem;">OPTIONAL</span></div>
+        <div style="font-weight:700;font-size:1rem;margin-bottom:0.25rem;">Module 3: AML Transaction Monitoring</div>
+        <div style="font-size:0.875rem;color:var(--text-3);margin-bottom:0.75rem;">Relevant if you're building transaction monitoring features or TMS integrations. Focus on Lesson 3.3 — TMS rules engine logic (velocity checks, peer group deviation, geographic risk) and what data fields your system must capture for TMS to function correctly.</div>
+        <a href="module-aml.html" class="btn btn-sm" style="background:var(--surface-2);border:1px solid var(--border);color:var(--text-2);">Start Module →</a>
+      </div>
+
+      <div class="path-step" style="padding-left:2rem;position:relative;">
+        <div style="position:absolute;left:-1rem;top:0;width:2rem;height:2rem;border-radius:50%;background:var(--surface-2);border:2px solid var(--border);color:var(--text-3);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.8rem;">4</div>
+        <div style="margin-bottom:0.25rem;"><span class="badge badge-gray" style="font-size:0.68rem;">OPTIONAL</span></div>
+        <div style="font-weight:700;font-size:1rem;margin-bottom:0.25rem;">Module 4: SAR Filing Procedures</div>
+        <div style="font-size:0.875rem;color:var(--text-3);margin-bottom:0.75rem;">Relevant if your system surfaces case management or SAR workflow features. The tipping-off prohibition (Lesson 4.2) has critical UI/UX implications: no customer-facing system should expose SAR status, and automated notifications must never reference compliance holds.</div>
+        <a href="module-sar.html" class="btn btn-sm" style="background:var(--surface-2);border:1px solid var(--border);color:var(--text-2);">Start Module →</a>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-top:3rem;">
+    <h2 style="font-weight:700;font-size:1.1rem;margin-bottom:1rem;">Compliance System Design Reference</h2>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+      <div style="background:var(--surface-2);border:1px solid var(--border);border-radius:var(--radius);padding:1rem;">
+        <div style="font-weight:700;font-size:0.875rem;margin-bottom:0.5rem;color:var(--indigo);">Data Retention Requirements</div>
+        <ul style="font-size:0.8rem;color:var(--text-2);line-height:1.8;padding-left:1.25rem;">
+          <li>Account records: 5 years after account closure</li>
+          <li>CTRs: 5 years from filing date</li>
+          <li>SARs: 5 years from filing date (BSA ID retained)</li>
+          <li>OFAC screening records: 5 years</li>
+          <li>CDD/EDD documents: 5 years after end of relationship</li>
+        </ul>
+      </div>
+      <div style="background:var(--surface-2);border:1px solid var(--border);border-radius:var(--radius);padding:1rem;">
+        <div style="font-weight:700;font-size:0.875rem;margin-bottom:0.5rem;color:#ef4444;">Tipping-Off Risks in System Design</div>
+        <ul style="font-size:0.8rem;color:var(--text-2);line-height:1.8;padding-left:1.25rem;">
+          <li>Never expose SAR status in customer dashboard</li>
+          <li>Transaction hold emails must not mention compliance review</li>
+          <li>Account restriction notifications must use neutral language</li>
+          <li>Internal compliance flags must be access-controlled</li>
+          <li>Audit logs containing SAR data require restricted access</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="footer-grid">
+    <div><div class="footer-brand">Compliance<span>·</span>Training</div></div>
+    <div>
+      <div class="footer-col-title">Learning Paths</div>
+      <ul class="footer-links">
+        <li><a href="path-compliance.html">Compliance Officer</a></li>
+        <li><a href="path-ops.html">Operations Team</a></li>
+        <li><a href="path-developer.html">Developer</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Program</div>
+      <ul class="footer-links">
+        <li><a href="knowledge-check.html">Knowledge Check</a></li>
+        <li><a href="index.html">← Program Home</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom"><span class="footer-copyright">© 2025 Compliance Training — Portfolio project by Sulagna Sasmal</span></div>
+</footer>
+
+<script src="assets/js/training.js"></script>
+</body>
+</html>

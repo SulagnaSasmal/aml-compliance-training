@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Module 3: AML Transaction Monitoring — Compliance Training</title>
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-brand">Compliance<span>·</span>Training</a>
+    <div class="nav-links">
+      <a href="module-bsa.html" class="nav-link">BSA</a>
+      <a href="module-ofac.html" class="nav-link">OFAC</a>
+      <a href="module-aml.html" class="nav-link active">AML</a>
+      <a href="module-sar.html" class="nav-link">SAR</a>
+    </div>
+  </div>
+</nav>
+
+<div class="lesson-layout">
+  <div class="breadcrumb">
+    <a href="index.html">Training</a>
+    <span class="breadcrumb-sep">›</span>
+    <span>Module 3: AML Transaction Monitoring</span>
+  </div>
+  <div style="display:flex;gap:0.5rem;margin-bottom:1rem;flex-wrap:wrap;">
+    <span class="badge badge-teal">Module 3</span>
+    <span class="badge badge-red">REQUIRED ALL ROLES</span>
+    <span class="badge badge-gray">4 Lessons · ~80 min</span>
+  </div>
+
+  <h1 style="font-family:var(--font-display);font-size:1.9rem;font-weight:800;color:var(--text);letter-spacing:-0.025em;margin-bottom:0.75rem;">AML Transaction Monitoring</h1>
+  <p style="color:var(--text-3);margin-bottom:2.5rem;">Understanding money laundering typologies, how transaction monitoring systems work, and how to investigate and escalate alerts.</p>
+
+  <article class="lesson-article">
+
+    <h2>Lesson 3.1 — The AML Framework</h2>
+
+    <p>Anti-Money Laundering (AML) refers to the set of laws, regulations, and procedures designed to detect and deter the practice of generating income through illegal actions and making that income appear legitimate. The BSA is the primary U.S. AML statute; it is supplemented by the USA PATRIOT Act, FinCEN regulations, and FFIEC examination guidance.</p>
+
+    <p>A compliant AML program must include five elements per the BSA:</p>
+    <ol>
+      <li><strong>Policies, procedures, and internal controls</strong> reasonably designed to prevent money laundering</li>
+      <li><strong>Designation of a BSA/AML Compliance Officer</strong> with sufficient authority and resources</li>
+      <li><strong>Ongoing employee training</strong> — which you are completing now</li>
+      <li><strong>Independent testing and audit</strong> of the program at least annually</li>
+      <li><strong>Customer Due Diligence</strong> (added by FinCEN's 2018 CDD Rule)</li>
+    </ol>
+
+    <h2>Lesson 3.2 — Money Laundering Typologies</h2>
+
+    <p>Money laundering typically proceeds in three stages: placement (introducing illicit funds into the financial system), layering (obscuring the trail through complex transactions), and integration (making funds appear legitimate). Understanding how each stage operates in practice is essential for identifying suspicious activity.</p>
+
+    <h3>Smurfing (Structuring)</h3>
+    <p>Breaking up large cash deposits into multiple smaller deposits below the CTR $10,000 threshold, often using multiple individuals ("smurfs") or accounts. Watch for: multiple sub-$10,000 deposits within short time periods, particularly with no corresponding business activity.</p>
+
+    <h3>Layering Through Wire Transfers</h3>
+    <p>Rapid movement of funds through multiple jurisdictions and accounts to separate the money from its criminal source. Red flags: multiple incoming and outgoing wires in quick succession with no retained balance, transactions passing through high-risk jurisdictions (Iran, North Korea, Russia, certain offshore financial centers).</p>
+
+    <h3>Trade-Based Money Laundering (TBML)</h3>
+    <p>Using trade transactions (imports/exports) to move value across borders. Methods include over- or under-invoicing goods, multiple invoicing of the same shipment, or falsely describing goods. Particularly common in B2B international wire activity.</p>
+
+    <h3>Shell Company Layering</h3>
+    <p>Use of multiple legal entities (LLCs, corporations) often registered in secrecy jurisdictions, to obscure the beneficial owner. The 2018 FinCEN CDD Rule directly targets this typology by requiring beneficial ownership collection at the 25% threshold.</p>
+
+    <div class="callout callout-rule">
+      <div class="callout-title">Key Red Flags — Memorize These</div>
+      <p>Customer avoids providing CIP information or provides inconsistent information; cash deposits are inconsistent with stated business type; transactions have no apparent business purpose; customer is evasive when asked about the nature of transactions; multiple accounts for a single entity with internal transfers; transactions just below reporting thresholds; rapid movement of funds with no economic purpose.</p>
+    </div>
+
+    <h2>Lesson 3.3 — Transaction Monitoring Systems</h2>
+
+    <p>Financial institutions use automated <strong>Transaction Monitoring Systems (TMS)</strong> to detect potentially suspicious activity. These systems apply a set of rules or models to transactional data and generate <strong>alerts</strong> when thresholds are exceeded or patterns match known typologies.</p>
+
+    <p>Common TMS scenarios include:</p>
+    <ul>
+      <li>High-velocity cash deposits (multiple deposits summing to $X within N days)</li>
+      <li>Large round-dollar wire transfers to new, non-established counterparties</li>
+      <li>Rapid account turnover (funds in and out within hours)</li>
+      <li>Transactions to/from high-risk jurisdictions</li>
+      <li>Dormant account suddenly active with large transactions</li>
+    </ul>
+
+    <h2>Lesson 3.4 — Alert Investigation Workflow</h2>
+
+    <p>When a TMS generates an alert, it enters a review workflow:</p>
+    <ol>
+      <li><strong>Level 1 (Analyst) Review</strong>: First-line analyst reviews the alert, gathers transaction data, and assesses whether the activity is explainable or suspicious. If explainable, the alert is <em>cleared with documentation</em>. If suspicious, it is escalated.</li>
+      <li><strong>Level 2 (Senior Analyst / Team Lead) Review</strong>: Second-line review of escalated alerts. May request Enhanced Due Diligence, contact relationship manager for business purpose explanation, or review prior SAR filings on the customer.</li>
+      <li><strong>Compliance Review</strong>: Final review determines whether a SAR is required. Compliance team drafts or approves the SAR narrative and authorizes filing.</li>
+    </ol>
+
+    <div class="scenario-box">
+      <div class="scenario-title">Investigation Scenario</div>
+      <div class="scenario-question">A TMS alert fires for Customer A: 5 ACH credits totaling $48,000 received over 3 days from 4 different senders, followed immediately by 2 wire transfers totaling $47,500 to accounts at two different international banks. The account balance never held more than $3,000 before this activity. How do you approach the investigation?</div>
+      <div class="scenario-analysis">This is high-risk activity consistent with an account being used as a <strong>funnel account</strong> — receiving funds from multiple sources and immediately sending them out, with no economic retention. Investigation steps: (1) Review customer onboarding KYC — is this activity consistent with stated business purpose? (2) Identify the senders — are they known to the customer? (3) Research the receiving banks — high-risk jurisdiction? (4) Check for prior SARs on the customer or any senders/receivers. (5) Given the pattern, this likely meets the SAR threshold — escalate to Level 2 with a recommendation to file.</div>
+    </div>
+
+    <div style="background:var(--teal-bg);border:1px solid var(--teal-border);border-radius:var(--radius-lg);padding:1.5rem;margin:2rem 0;text-align:center;">
+      <p style="font-size:0.875rem;margin-bottom:1rem;"><strong>Module 3 complete.</strong> Continue to SAR Filing (compliance officers) or take the knowledge check.</p>
+      <div style="display:flex;gap:0.75rem;justify-content:center;flex-wrap:wrap;">
+        <a href="module-sar.html" class="btn btn-indigo">Module 4: SAR Filing →</a>
+        <a href="knowledge-check.html" class="btn btn-outline">Take Knowledge Check</a>
+      </div>
+    </div>
+
+  </article>
+</div>
+
+<footer class="footer">
+  <div class="footer-grid">
+    <div><div class="footer-brand">Compliance<span>·</span>Training</div></div>
+    <div>
+      <div class="footer-col-title">Modules</div>
+      <ul class="footer-links">
+        <li><a href="module-bsa.html">Module 1: BSA</a></li>
+        <li><a href="module-ofac.html">Module 2: OFAC</a></li>
+        <li><a href="module-sar.html">Module 4: SAR →</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Program</div>
+      <ul class="footer-links">
+        <li><a href="knowledge-check.html">Knowledge Check</a></li>
+        <li><a href="index.html">← Program Home</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom"><span class="footer-copyright">© 2025 Compliance Training — Portfolio project by Sulagna Sasmal</span></div>
+</footer>
+
+<script src="assets/js/training.js"></script>
+</body>
+</html>

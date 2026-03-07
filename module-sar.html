@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Module 4: SAR Filing — Compliance Training</title>
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-brand">Compliance<span>·</span>Training</a>
+    <div class="nav-links">
+      <a href="module-bsa.html" class="nav-link">BSA</a>
+      <a href="module-ofac.html" class="nav-link">OFAC</a>
+      <a href="module-aml.html" class="nav-link">AML</a>
+      <a href="module-sar.html" class="nav-link active">SAR</a>
+    </div>
+  </div>
+</nav>
+
+<div class="lesson-layout">
+  <div class="breadcrumb">
+    <a href="index.html">Training</a>
+    <span class="breadcrumb-sep">›</span>
+    <span>Module 4: SAR Filing</span>
+  </div>
+  <div style="display:flex;gap:0.5rem;margin-bottom:1rem;flex-wrap:wrap;">
+    <span class="badge badge-purple">Module 4</span>
+    <span class="badge badge-red">COMPLIANCE OFFICER REQUIRED</span>
+    <span class="badge badge-gray">3 Lessons · ~60 min</span>
+  </div>
+
+  <h1 style="font-family:var(--font-display);font-size:1.9rem;font-weight:800;color:var(--text);letter-spacing:-0.025em;margin-bottom:0.75rem;">SAR Filing Procedures</h1>
+  <p style="color:var(--text-3);margin-bottom:2.5rem;">When to file, what to write, and how to use FinCEN's BSA E-Filing system — for compliance officers and senior analysts.</p>
+
+  <article class="lesson-article">
+
+    <h2>Lesson 4.1 — When to File a SAR</h2>
+
+    <p>A Suspicious Activity Report is <strong>mandatory</strong> when all three conditions are met:</p>
+    <ol>
+      <li>The transaction involves a covered financial institution</li>
+      <li>The transaction involves at least $5,000 (where a suspect can be identified) or $25,000 (regardless of suspect identification)</li>
+      <li>The transaction is known, suspected, or there is reason to suspect it involves funds from illegal activity; is designed to evade BSA requirements; lacks a lawful purpose with no reasonable explanation; or involves use of the financial institution to facilitate criminal activity</li>
+    </ol>
+
+    <p>Filing is also <strong>voluntary</strong> for suspicious activity below the mandatory thresholds. FinCEN and law enforcement agencies value below-threshold SARs, particularly in structuring and fraud patterns where individual transactions are small.</p>
+
+    <h3>30-Day Filing Rule</h3>
+    <p>SARs must be filed within <strong>30 calendar days</strong> from the date the institution initially detects a basis for filing. If no suspect is identified, the deadline extends to <strong>60 calendar days</strong>. When a filing delay would be material to a criminal investigation, FinCEN should be contacted for guidance.</p>
+
+    <h2>Lesson 4.2 — SAR Narrative Writing Standards</h2>
+
+    <p>The SAR narrative is the most important part of a SAR filing. FinCEN and law enforcement use it to decide whether to investigate. A well-written narrative is specific, factual, and answers the "5 Ws": Who, What, When, Where, and Why suspicious.</p>
+
+    <p><strong>Required elements of the SAR narrative:</strong></p>
+    <ul>
+      <li>Who is involved (describe subjects — do not use names in the narrative text field other than the formal subject fields)</li>
+      <li>What activity occurred — specific transaction amounts, dates, types</li>
+      <li>When the activity occurred — specific dates and time periods</li>
+      <li>Where transactions occurred — accounts, locations, wire routing</li>
+      <li>Why the activity is suspicious — what made this activity inconsistent with known customer information</li>
+      <li>How the institution became aware — alert, manual review, law enforcement contact</li>
+      <li>What the institution did — account restricted, relationship terminated, etc.</li>
+    </ul>
+
+    <div class="scenario-box">
+      <div class="scenario-title">Sample SAR Narrative (Redacted)</div>
+      <div class="scenario-question">Example of a well-formed AML SAR narrative excerpt:</div>
+      <div class="scenario-analysis" style="font-family:var(--font-mono);font-size:0.78rem;line-height:1.9;">
+        "Between [DATE] and [DATE], Subject A (hereinafter "Subject"), a [BUSINESS TYPE] opened [DATE], received 12 ACH credit transactions totaling $94,500 from 6 separate originators, none of which had prior transaction history with Subject's account. Within 24-48 hours of each credit, Subject transmitted wire transfers in equivalent amounts less routine transaction fees to two foreign beneficiary accounts at [BANK] in [JURISDICTION]. The account balance at no point exceeded $2,500 prior to this activity period. This pattern is consistent with a funnel account scheme in which Subject's account is being used to aggregate and move illicit proceeds of unknown origin. Subject's stated business purpose of [BUSINESS TYPE] does not provide explanation for international wire activity of this volume. The institution has restricted the account pending this filing."
+      </div>
+    </div>
+
+    <h3>SAR Do's and Don'ts</h3>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:1rem 0;">
+      <div style="background:var(--teal-bg);border:1px solid var(--teal-border);border-radius:var(--radius);padding:1rem;">
+        <div style="font-weight:700;color:var(--teal);margin-bottom:0.5rem;">✓ DO</div>
+        <ul style="font-size:0.83rem;color:var(--text-2);padding-left:1.25rem;">
+          <li>Be specific with dates, amounts, and account numbers</li>
+          <li>Explain why the activity is unusual for this customer</li>
+          <li>Reference prior SARs or EDD if applicable</li>
+          <li>Use plain, professional language</li>
+          <li>Have legal review narrative before filing</li>
+        </ul>
+      </div>
+      <div style="background:var(--red-bg);border:1px solid var(--red-border);border-radius:var(--radius);padding:1rem;">
+        <div style="font-weight:700;color:var(--red);margin-bottom:0.5rem;">✗ DO NOT</div>
+        <ul style="font-size:0.83rem;color:var(--text-2);padding-left:1.25rem;">
+          <li>Tip off the customer that a SAR has been or may be filed</li>
+          <li>Use conclusory language ("this is money laundering")</li>
+          <li>Include unverified gossip or speculation</li>
+          <li>File a SAR without management authorization</li>
+          <li>Delay filing past the 30/60-day deadline</li>
+        </ul>
+      </div>
+    </div>
+
+    <h2>Lesson 4.3 — FinCEN BSA E-Filing System</h2>
+
+    <p>SARs are filed electronically using <strong>FinCEN's BSA E-Filing System</strong> at <code>bsaefiling.fincen.treas.gov</code>. Access requires an EIN-registered account approved by your institution's primary Supervisory User.</p>
+
+    <p><strong>SAR Form Fields (key):</strong></p>
+    <ul>
+      <li>Part I — Filing institution information</li>
+      <li>Part II — Suspect information (name, DOB, address, ID)</li>
+      <li>Part III — Suspicious activity information (dates, dollar amounts, activity type checkboxes)</li>
+      <li>Part IV — Narrative (free-text, no character limit — write a complete, specific description)</li>
+    </ul>
+
+    <p>After filing, FinCEN issues a <strong>BSA Identification Number (BSA ID)</strong> which becomes the permanent reference for that SAR. This number should be recorded in your case management system for the 5-year mandatory retention period.</p>
+
+    <div class="callout callout-rule">
+      <div class="callout-title">90-Day Continuing Activity SAR</div>
+      <p>If the suspicious activity continues after an initial SAR is filed, a <strong>continuing activity SAR</strong> must be filed every 90 days while the activity continues. Reference the original SAR's BSA ID in the continuation filing to link the cases.</p>
+    </div>
+
+    <div style="background:var(--teal-bg);border:1px solid var(--teal-border);border-radius:var(--radius-lg);padding:1.5rem;margin:2rem 0;text-align:center;">
+      <p style="font-size:0.875rem;margin-bottom:1rem;"><strong>All 4 modules complete.</strong> Take the final knowledge check to earn your certification.</p>
+      <a href="knowledge-check.html" class="btn btn-indigo">Take Final Knowledge Check →</a>
+    </div>
+
+  </article>
+</div>
+
+<footer class="footer">
+  <div class="footer-grid">
+    <div><div class="footer-brand">Compliance<span>·</span>Training</div></div>
+    <div>
+      <div class="footer-col-title">Modules</div>
+      <ul class="footer-links">
+        <li><a href="module-bsa.html">Module 1: BSA</a></li>
+        <li><a href="module-ofac.html">Module 2: OFAC</a></li>
+        <li><a href="module-aml.html">Module 3: AML</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Program</div>
+      <ul class="footer-links">
+        <li><a href="knowledge-check.html">Knowledge Check</a></li>
+        <li><a href="index.html">← Program Home</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom"><span class="footer-copyright">© 2025 Compliance Training — Portfolio project by Sulagna Sasmal</span></div>
+</footer>
+
+<script src="assets/js/training.js"></script>
+</body>
+</html>

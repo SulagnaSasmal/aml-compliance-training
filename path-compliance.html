@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Compliance Officer Path — Compliance Training</title>
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-brand">Compliance<span>·</span>Training</a>
+    <div class="nav-links">
+      <a href="module-bsa.html" class="nav-link">BSA</a>
+      <a href="module-ofac.html" class="nav-link">OFAC</a>
+      <a href="module-aml.html" class="nav-link">AML</a>
+      <a href="module-sar.html" class="nav-link">SAR</a>
+    </div>
+  </div>
+</nav>
+
+<div class="lesson-layout">
+  <div class="breadcrumb">
+    <a href="index.html">Training</a>
+    <span class="breadcrumb-sep">›</span>
+    <span>Compliance Officer Path</span>
+  </div>
+
+  <div style="display:flex;gap:0.5rem;margin-bottom:1rem;flex-wrap:wrap;">
+    <span class="badge badge-indigo">Compliance Officer</span>
+    <span class="badge badge-red">4 Required · 1 Elective</span>
+    <span class="badge badge-gray">~4 hours total</span>
+  </div>
+
+  <h1 style="font-family:var(--font-display);font-size:1.9rem;font-weight:800;color:var(--text);letter-spacing:-0.025em;margin-bottom:0.5rem;">Compliance Officer Learning Path</h1>
+  <p style="color:var(--text-3);margin-bottom:2.5rem;">You are responsible for the institution's BSA/AML compliance program. This path covers all four core modules in depth, plus certification. All modules are required for compliance officers and MLROs.</p>
+
+  <div style="display:grid;grid-template-columns:1fr 2fr;gap:2rem;align-items:start;">
+    <div style="background:var(--surface-2);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.5rem;position:sticky;top:80px;">
+      <div style="font-weight:700;font-size:0.875rem;margin-bottom:1rem;">Path Completion</div>
+      <div id="path-progress-bar" style="background:var(--border);border-radius:99px;height:8px;margin-bottom:0.5rem;overflow:hidden;">
+        <div style="background:var(--indigo);height:100%;border-radius:99px;width:0%;transition:width 0.4s;" id="path-fill"></div>
+      </div>
+      <div style="font-family:var(--font-mono);font-size:0.75rem;color:var(--text-3);margin-bottom:1.5rem;" id="path-label">0 of 5 complete</div>
+      <div style="font-size:0.8rem;color:var(--text-3);margin-bottom:0.25rem;font-weight:600;">Certification requirement</div>
+      <div style="font-size:0.8rem;color:var(--text-2);">Complete all 4 required modules + knowledge check with ≥80%</div>
+      <div style="margin-top:1.5rem;">
+        <a href="knowledge-check.html" class="btn btn-indigo" style="width:100%;text-align:center;display:block;">Take Knowledge Check →</a>
+      </div>
+    </div>
+
+    <div>
+      <div class="path-step" style="border-left:2px solid var(--indigo);padding-left:2rem;padding-bottom:2rem;position:relative;">
+        <div class="path-step-num required" style="position:absolute;left:-1rem;top:0;width:2rem;height:2rem;border-radius:50%;background:var(--indigo);color:white;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.8rem;">1</div>
+        <div style="margin-bottom:0.25rem;">
+          <span class="badge badge-red" style="font-size:0.68rem;">REQUIRED</span>
+        </div>
+        <div style="font-weight:700;font-size:1rem;margin-bottom:0.25rem;">Module 1: Bank Secrecy Act (BSA)</div>
+        <div style="font-size:0.875rem;color:var(--text-3);margin-bottom:0.75rem;">4 lessons · ~60 min — BSA framework, KYC/CDD/EDD, CTR filing, SAR thresholds, beneficial ownership</div>
+        <a href="module-bsa.html" class="btn btn-sm" style="background:var(--indigo-bg);border:1px solid var(--indigo-border);color:var(--indigo);">Start Module →</a>
+      </div>
+
+      <div class="path-step" style="border-left:2px solid var(--indigo);padding-left:2rem;padding-bottom:2rem;position:relative;">
+        <div class="path-step-num required" style="position:absolute;left:-1rem;top:0;width:2rem;height:2rem;border-radius:50%;background:var(--indigo);color:white;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.8rem;">2</div>
+        <div style="margin-bottom:0.25rem;">
+          <span class="badge badge-red" style="font-size:0.68rem;">REQUIRED</span>
+        </div>
+        <div style="font-weight:700;font-size:1rem;margin-bottom:0.25rem;">Module 2: OFAC Screening</div>
+        <div style="font-size:0.875rem;color:var(--text-3);margin-bottom:0.75rem;">3 lessons · ~45 min — SDN list, 50% rule, screening methodology, blocked/rejected distinctions, procedures</div>
+        <a href="module-ofac.html" class="btn btn-sm" style="background:var(--indigo-bg);border:1px solid var(--indigo-border);color:var(--indigo);">Start Module →</a>
+      </div>
+
+      <div class="path-step" style="border-left:2px solid var(--indigo);padding-left:2rem;padding-bottom:2rem;position:relative;">
+        <div class="path-step-num required" style="position:absolute;left:-1rem;top:0;width:2rem;height:2rem;border-radius:50%;background:var(--indigo);color:white;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.8rem;">3</div>
+        <div style="margin-bottom:0.25rem;">
+          <span class="badge badge-red" style="font-size:0.68rem;">REQUIRED</span>
+        </div>
+        <div style="font-weight:700;font-size:1rem;margin-bottom:0.25rem;">Module 3: AML Transaction Monitoring</div>
+        <div style="font-size:0.875rem;color:var(--text-3);margin-bottom:0.75rem;">4 lessons · ~60 min — AML program pillars, typologies, TMS mechanics, alert investigation workflow</div>
+        <a href="module-aml.html" class="btn btn-sm" style="background:var(--indigo-bg);border:1px solid var(--indigo-border);color:var(--indigo);">Start Module →</a>
+      </div>
+
+      <div class="path-step" style="border-left:2px solid var(--indigo);padding-left:2rem;padding-bottom:2rem;position:relative;">
+        <div class="path-step-num required" style="position:absolute;left:-1rem;top:0;width:2rem;height:2rem;border-radius:50%;background:var(--indigo);color:white;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.8rem;">4</div>
+        <div style="margin-bottom:0.25rem;">
+          <span class="badge badge-red" style="font-size:0.68rem;">REQUIRED</span>
+        </div>
+        <div style="font-weight:700;font-size:1rem;margin-bottom:0.25rem;">Module 4: SAR Filing Procedures</div>
+        <div style="font-size:0.875rem;color:var(--text-3);margin-bottom:0.75rem;">3 lessons · ~60 min — Filing thresholds, narrative writing standards, BSA E-Filing, continuing activity SARs</div>
+        <a href="module-sar.html" class="btn btn-sm" style="background:var(--indigo-bg);border:1px solid var(--indigo-border);color:var(--indigo);">Start Module →</a>
+      </div>
+
+      <div class="path-step" style="padding-left:2rem;position:relative;">
+        <div style="position:absolute;left:-1rem;top:0;width:2rem;height:2rem;border-radius:50%;background:var(--indigo);color:white;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.8rem;">✓</div>
+        <div style="margin-bottom:0.25rem;">
+          <span class="badge badge-amber" style="font-size:0.68rem;">CERTIFICATION</span>
+        </div>
+        <div style="font-weight:700;font-size:1rem;margin-bottom:0.25rem;">Final Knowledge Check</div>
+        <div style="font-size:0.875rem;color:var(--text-3);margin-bottom:0.75rem;">20 scenario-based questions across all 4 modules. Pass with 80% to earn your annual certification.</div>
+        <a href="knowledge-check.html" class="btn btn-indigo">Take Knowledge Check →</a>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-top:3rem;background:var(--surface-2);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.5rem;">
+    <div style="font-weight:700;margin-bottom:0.75rem;">Role Notes for Compliance Officers</div>
+    <ul style="font-size:0.875rem;color:var(--text-2);line-height:2;padding-left:1.25rem;">
+      <li>You are responsible for authorizing all SAR filings — no SAR should be filed without your review and sign-off.</li>
+      <li>You have sole authority to clear potential OFAC matches — front-line staff must escalate screening hits to you. Document every disposition decision.</li>
+      <li>You are the institution's primary BSA E-Filing Supervisory User — manage staff filing access and ensure timely submission.</li>
+      <li>Annual recertification is required. This program satisfies the annual training requirement under 31 CFR 1020.210.</li>
+      <li>If you receive a law enforcement request or grand jury subpoena related to a SAR, do not disclose the SAR filing to the subject or their counsel. Consult legal before responding.</li>
+    </ul>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="footer-grid">
+    <div><div class="footer-brand">Compliance<span>·</span>Training</div></div>
+    <div>
+      <div class="footer-col-title">Learning Paths</div>
+      <ul class="footer-links">
+        <li><a href="path-compliance.html">Compliance Officer</a></li>
+        <li><a href="path-ops.html">Operations Team</a></li>
+        <li><a href="path-developer.html">Developer</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Program</div>
+      <ul class="footer-links">
+        <li><a href="knowledge-check.html">Knowledge Check</a></li>
+        <li><a href="index.html">← Program Home</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom"><span class="footer-copyright">© 2025 Compliance Training — Portfolio project by Sulagna Sasmal</span></div>
+</footer>
+
+<script src="assets/js/training.js"></script>
+</body>
+</html>
