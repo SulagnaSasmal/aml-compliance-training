@@ -13,10 +13,10 @@ Hosted on GitHub Pages: `sulagnasasmal.github.io/aml-compliance-training/`
 | Module | Page | Topic |
 |--------|------|-------|
 | Index | `index.html` | Program overview and learning path selection |
-| AML | `module-aml.html` | Anti-Money Laundering — typologies, red flags, CDD/EDD |
-| BSA | `module-bsa.html` | Bank Secrecy Act — reporting requirements, CTRs, SARs |
-| OFAC | `module-ofac.html` | OFAC Sanctions — SDN screening, compliance procedures |
-| SAR | `module-sar.html` | Suspicious Activity Reports — filing, content, timelines |
+| AML | `module-aml.html` | Anti-Money Laundering: typologies, red flags, CDD/EDD |
+| BSA | `module-bsa.html` | Bank Secrecy Act: reporting requirements, CTRs, SARs |
+| OFAC | `module-ofac.html` | OFAC Sanctions: SDN screening, compliance procedures |
+| SAR | `module-sar.html` | Suspicious Activity Reports: filing, content, timelines |
 | Knowledge Check | `knowledge-check.html` | Scenario-based quiz engine with instant scoring |
 
 ### Learning Paths
@@ -40,7 +40,7 @@ All pages support dark and light themes via a toggle button (◐ / ☀) in the n
 
 ## Status
 
-**Phase 5 — Training & Learning — Complete**
+**Phase 5: Training & Learning (Complete)**
 
 | Area | Status |
 |------|--------|
